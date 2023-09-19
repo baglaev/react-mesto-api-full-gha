@@ -1,0 +1,20 @@
+.profile__image-overlay {
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background: rgba( 0, 0, 0, .8);
+    /* background-image: url(../../../images/Vector.svg); */
+    background-position: 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    /* background-size: 26px;
+    height: 100%;
+    width: 100%; */
+}
+
+.profile__image-overlay:hover {
+    opacity: 1;
+}
