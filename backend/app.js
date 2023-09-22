@@ -23,12 +23,6 @@ const limiter = rateLimit({
   max: 100,
 });
 
-// app.use(
-//   cors({
-//     origin: 'https://mesto-bglvssh.nomoredomainsrocks.ru',
-//     credentials: true,
-//   }),
-// );
 app.use(cors());
 
 // app.use(cors({ origin: ['http://localhost:3001'], credentials: true }));

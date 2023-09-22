@@ -159,7 +159,7 @@ class Api {
 
   const api = new Api({
     // baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66',
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'https://mesto-bglvssh-back.nomoredomainsrocks.ru',
     // headers: {
     //   authorization: 'ce3e7b6f-f070-4401-b0f3-689824d2bbf0',
     //   'Content-Type': 'application/json'
