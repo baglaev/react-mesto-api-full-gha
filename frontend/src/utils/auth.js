@@ -1,4 +1,4 @@
-export const BASE_URL = "https://mesto-bglvssh-back.nomoredomainsrocks.ru";
+export const BASE_URL = "http://localhost:3000";
 // export const BASE_URL = "https://auth.nomoreparties.co";
 
 export const register = (email, password) => {
