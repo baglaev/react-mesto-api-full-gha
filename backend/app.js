@@ -1,9 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const { login, createUser } = require('./controllers/user');
 const { auth } = require('./middlewares/auth');
 const NotFoundError = require('./errors/NotFoundError');
@@ -20,6 +22,23 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 100,
   max: 100,
 });
+
+// app.use(
+//   cors({
+//     origin: 'https://mesto-bglvssh.nomoredomainsrocks.ru',
+//     credentials: true,
+//   }),
+// );
+app.use(cors());
+
+// app.use(cors({ origin: ['http://localhost:3001'], credentials: true }));
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.use(limiter);
 
 app.use(bodyParser.json());

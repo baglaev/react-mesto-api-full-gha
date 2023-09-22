@@ -44,7 +44,9 @@ function App() {
             return;
           }
           setIsLoggedIn(true);
-          setEmail(data.data.email)
+          setCurrentUser(data);
+          setEmail(data.email);
+          // setEmail(data.data.email);
           navigate("/", { replace: true });
         })
         .catch(() => {
@@ -160,15 +162,17 @@ function App() {
   }
 
   useEffect(() => {
-    Promise.all([api.getProfile(), api.getInitialCards()])
-      .then(([userInfo, cards]) => {
-        setCurrentUser(userInfo)
-        setCards(cards)
-      })
-      .catch((error) => {
-        console.log(`Ошибка ${error}`)
-      });
-  }, [])
+    if (isLoggedIn) {
+      Promise.all([api.getProfile(), api.getInitialCards()])
+        .then(([userInfo, cards]) => {
+          setCurrentUser(userInfo)
+          setCards(cards)
+        })
+        .catch((error) => {
+          console.log(`Ошибка ${error}`)
+        });
+    } 
+  }, [isLoggedIn])
 
   useEffect(() => {
     checkTokenActive();

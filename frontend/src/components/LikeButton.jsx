@@ -6,7 +6,7 @@ function LikeButton({likes, userId, cardId}) {
     const[count, setCount] = useState(likes.length);
 
     useEffect(() => {
-        setIsLike(likes.some(item => userId === item._id))
+        setIsLike(likes.some((i) => i === userId))
     }, [likes, userId])
 
     function handleLike() {
@@ -28,6 +28,7 @@ function LikeButton({likes, userId, cardId}) {
             .catch((error) => {
                 console.log(`Ошибка ${error}`)
             })
+            console.log(count)
         }
     }
 

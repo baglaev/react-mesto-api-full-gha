@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.108.115
 
-Frontend https://...
+Frontend https://mesto-bglvssh.nomoredomainsrocks.ru
 
-Backend https://...
+Backend https://mesto-bglvssh-back.nomoredomainsrocks.ru
