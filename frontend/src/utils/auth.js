@@ -26,8 +26,8 @@ export const login = (email, password) => {
     },
     // credentials: 'include',
     body: JSON.stringify({
-      email: email,
-      password: password
+      password: password,
+      email: email
     }),
   })
     .then(checkResponse)
