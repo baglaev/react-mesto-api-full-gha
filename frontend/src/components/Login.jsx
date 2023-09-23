@@ -23,7 +23,7 @@ function Login({handleLogin, setEmail}) {
         handleLogin();
 
 
-        auth.login(formValue.password, formValue.email)
+        auth.login(formValue.email, formValue.password)
             .then((res) => {
                 localStorage.setItem("jwt", res.token);
                 setEmail(formValue.email)
