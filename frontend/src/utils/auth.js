@@ -10,14 +10,14 @@ export const register = (email, password) => {
     },
     // credentials: 'include',
     body: JSON.stringify({
-      password: password,
-      email: email
+      email: email,
+      password: password
     }),
   })
     .then(checkResponse)
 }
 
-export const login = (password, email) => {
+export const login = (email, password) => {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
@@ -26,8 +26,8 @@ export const login = (password, email) => {
     },
     // credentials: 'include',
     body: JSON.stringify({
-      password: password,
       email: email,
+      password: password
     }),
   })
     .then(checkResponse)

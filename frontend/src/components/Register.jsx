@@ -6,8 +6,8 @@ function Register({setSuccess, setIsInfoTooltip}) {
     const navigate = useNavigate();
 
     const [formValue, setFormValue] = useState({
-        password: '',
-        email: ''
+        email: '',
+        password: ''
     })
 
     function handleChange(e) {
@@ -20,7 +20,7 @@ function Register({setSuccess, setIsInfoTooltip}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        auth.register(formValue.password, formValue.email)
+        auth.register(formValue.email, formValue.password)
             .then(() => {
                 navigate("/signin");
                 setSuccess(true);
